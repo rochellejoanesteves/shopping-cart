@@ -1,10 +1,8 @@
 .layoutContainer {
-    border: 1px solid red;
     width: auto;
     display: flex;
     height: 100%;
     .children {
-        border: 1px solid red;
         // width: 70%;
         flex: 1;
     };

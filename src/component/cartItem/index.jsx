@@ -1,7 +1,18 @@
+import { useDispatch } from "react-redux";
 import Button from "../button";
+import { removeFromCart, addToCart } from "../../features/cart/cartSlice";
 import "./cartItem.scss";
 
 function CartItem({ product }) {
+  const dispatch = useDispatch();
+
+  const removeItem = (product) => {
+    dispatch(removeFromCart({ id: product.id }));
+  };
+
+  const addItem = (product) => {
+    dispatch(addToCart(product));
+  };
   return (
     <div className="cartContainer">
       <div className="cartItems">
@@ -11,9 +22,9 @@ function CartItem({ product }) {
         </div>
 
         <div className="itemCount">
-          <Button text="-" />
+          <Button text="-" onClick={() => removeItem(product[0])} />
           <p>{product.length}</p>
-          <Button text="+" />
+          <Button text="+" onClick={() => addItem(product[0])} />
         </div>
 
         <div className="itemPrice">

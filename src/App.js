@@ -8,15 +8,15 @@ import ProductItem from "./pages/productItems";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Layout>
-        <BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cartItems/:id" element={<ProductItem />} />
           </Routes>
-        </BrowserRouter>
-      </Layout>
+        </Layout>
+      </BrowserRouter>
     </div>
   );
 }

@@ -31,6 +31,7 @@ function ProductItem() {
             </div>
           <div className="itemBody">
             <h1>{data.title}</h1>
+            <h2>${data.price}</h2>
             <p>{data.description}</p>
 
             <div className="sizeButton">

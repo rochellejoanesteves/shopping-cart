@@ -1,4 +1,16 @@
 .sideContainer {
-    border: 1px solid red;
+    background-color: antiquewhite;
     width: 30%;
+    .checkout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .total {
+            display: flex;
+            justify-content: space-around;
+            h1 {
+                color: green;
+            }
+        }
+    }
 }

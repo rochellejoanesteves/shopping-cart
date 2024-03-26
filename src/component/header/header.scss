@@ -1,5 +1,6 @@
 .header {
-    border: 1px solid red;
+    background-color: #58249c;
+    color: #fff;
     height: 80px;
     display: flex;
     align-items: center;
@@ -11,6 +12,7 @@
     span {
         background: red;
         padding: 5px;
+        color: #000;
         border-radius: 40%;
     }
 }
