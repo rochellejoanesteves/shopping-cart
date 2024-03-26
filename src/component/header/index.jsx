@@ -1,7 +1,11 @@
 import "./header.scss";
 import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { itemsCount } from "../../features/cart/cartSlice";
 
 function Header() {
+  const productCount = useSelector(itemsCount)
+
   return (
     <div className="header">
       <div>
@@ -9,6 +13,7 @@ function Header() {
       </div>
       <div>
         <FaShoppingCart className="icon"/>
+        <span>{productCount}</span>
       </div>
     </div>
   );

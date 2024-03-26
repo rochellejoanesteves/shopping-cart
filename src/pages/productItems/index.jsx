@@ -1,15 +1,20 @@
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Button from "../../component/button";
 import useFetch from "../../hooks/useFetch";
+import { addToCart } from "../../features/cart/cartSlice";
 import "./productItem.scss"
 
-function CartItems() {
+function ProductItem() {
   const params = useParams();
+  const dispatch = useDispatch();
   const { data, loading, error } = useFetch(
     `https://dummyjson.com/products/${params.id}`
   );
 
-  console.log(data)
+  const addProduct = (item) => {
+    dispatch(addToCart(item))
+  }
 
   return (
     <div className="productContainer">
@@ -34,7 +39,7 @@ function CartItems() {
                 <Button text="M"/>
                 <Button text="L"/>
             </div>
-                <Button text="Add to Cart"/>
+                <Button text="Add to Cart" onClick={() => addProduct(data)}/>
           </div>
         </div>
       ) : (
@@ -44,4 +49,4 @@ function CartItems() {
   );
 }
 
-export default CartItems;
+export default ProductItem;
